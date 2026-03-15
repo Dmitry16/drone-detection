@@ -1,21 +1,4 @@
-
-# Early Detection of Airborne Objects for Ground Robotic Platforms
-
-Task description, Part 1 suggested solution, and Part 2 production-style computer vision / AI pipeline.
-
----
-
-# Task Description
-
-- The objective is to design a robust onboard perception system for a ground robotic platform that can detect approaching airborne objects as early as possible and convert those detections into usable situational awareness.
-- The practical challenge is not only object detection, but early detection of very small targets under real outdoor conditions: clouds, trees, rooftops, glare, dusk, haze, motion blur, and platform movement all degrade performance.
-- The system must therefore combine sensors, video conditioning, AI-based recognition, temporal tracking, and threat evaluation.
-- It should distinguish likely airborne threats from birds, insects, visual artifacts, and background noise while operating with low latency on embedded compute and tracking multiple objects simultaneously.
-- Desired outputs: stable object tracks, confidence estimates, approach indicators, threat scores, and alert events usable by an operator interface or autonomy stack.
-
----
-
-# Part 1 — Suggested System Solution
+# Part 1 — System Solution (High Level)
 
 The recommended solution is a **layered perception architecture** combining sensors, computer vision, and temporal reasoning.
 
@@ -85,7 +68,8 @@ Operational outputs include alerting, telemetry snapshots, short incident record
 
 ---
 
-# Part 2 — Computer Vision / AI Pipeline for Early Airborne Detection
+<a name="solution-1-cv-ai-pipeline"></a>
+# Part 2 — Computer Vision / AI Pipeline for Early Airborne Detection (High Level)
 
 This describes a **production‑style CV stack**, not just “one model on video”.
 
@@ -97,6 +81,7 @@ Focus:
 
 ---
 
+<a name="pipeline-goal"></a>
 # 1. Pipeline Goal
 
 ## Inputs
@@ -125,6 +110,7 @@ Events:
 
 ---
 
+<a name="overall-pipeline-architecture"></a>
 # 2. Overall Pipeline Architecture
 
 Recommended stages:
@@ -140,6 +126,7 @@ Recommended stages:
 
 ---
 
+<a name="stage-0-sensor-ingest"></a>
 # Stage 0 — Sensor Ingest
 
 - RTSP / CSI / USB camera capture
@@ -173,6 +160,7 @@ Metrics:
 
 ---
 
+<a name="stage-1-video-conditioning"></a>
 # Stage 1 — Video Conditioning
 
 Critical stage to reduce noise before AI.
@@ -204,6 +192,7 @@ Goal: reduce false positives without overly aggressive masking.
 
 ---
 
+<a name="stage-2-fast-candidate-generation"></a>
 # Stage 2 — Fast Candidate Generation
 
 Purpose: cheaply narrow the search area.
@@ -239,6 +228,7 @@ Important rule:
 
 ---
 
+<a name="stage-3-ai-detection--classification"></a>
 # Stage 3 — AI Detection / Classification
 
 Two options:
@@ -276,6 +266,7 @@ For early detection, **high recall is more important than per‑frame precision*
 
 ---
 
+<a name="stage-4-multi-object-tracking"></a>
 # Stage 4 — Multi‑Object Tracking
 
 Tracking provides persistent object identity.
@@ -308,6 +299,7 @@ Association methods:
 
 ---
 
+<a name="stage-5-temporal-reasoning"></a>
 # Stage 5 — Temporal Reasoning
 
 Determines if the object is **approaching**.
@@ -337,6 +329,7 @@ With calibration the system can estimate:
 
 ---
 
+<a name="stage-6-threat-scoring"></a>
 # Stage 6 — Threat Scoring
 
 Combine:
@@ -359,6 +352,7 @@ Hysteresis prevents alert oscillation.
 
 ---
 
+<a name="stage-7-output-and-interface"></a>
 # Stage 7 — Output and Interface
 
 Outputs:
