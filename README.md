@@ -17,6 +17,7 @@ Task description, Part 1 suggested solution, and Part 2 production-style compute
   - [Stage 5 — Temporal Reasoning](docs/airborne_detection_pipeline.md#stage-5-temporal-reasoning)
   - [Stage 6 — Threat Scoring](docs/airborne_detection_pipeline.md#stage-6-threat-scoring)
   - [Stage 7 — Output and Interface](docs/airborne_detection_pipeline.md#stage-7-output-and-interface)
+- [Orange Pi 5 Deep Research Report](docs/orange-pi5-deep-research-report.md#early-detection-of-airborne-objects-on-embedded-compute-with-orange-pi-5)
 
 ---
 
