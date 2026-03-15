@@ -4,7 +4,7 @@
 Task description, Part 1 suggested solution, and Part 2 production-style computer vision / AI pipeline.
 
 ## Table of Contents
-- [Task Description](#task-description)
+- [Problem Description](#task-description)
 - [Solution 1 — System Layers High Level Description](docs/airborne_detection_pipeline.md#part-1-—-system-solution-high-level)
 - [Solution 1 — Computer Vision / AI Pipeline for Early Airborne Detection (High Level)](docs/airborne_detection_pipeline.md#solution-1-cv-ai-pipeline)
   - [1. Pipeline Goal](docs/airborne_detection_pipeline.md#pipeline-goal)
@@ -18,10 +18,11 @@ Task description, Part 1 suggested solution, and Part 2 production-style compute
   - [Stage 6 — Threat Scoring](docs/airborne_detection_pipeline.md#stage-6-threat-scoring)
   - [Stage 7 — Output and Interface](docs/airborne_detection_pipeline.md#stage-7-output-and-interface)
 - [Orange Pi 5 Deep Research Report](docs/orange-pi5-deep-research-report.md#early-detection-of-airborne-objects-on-embedded-compute-with-orange-pi-5)
+- [Orange Pi 4 Variant Report. Costs, technical comparison with Pi 5](docs/orange_pi4_variant_report.md#early-airborne-detection-on-embedded-compute)
 
 ---
 
-# Task Description
+# Problem Description
 
 - The objective is to design a robust onboard perception system for a ground robotic platform that can detect approaching airborne objects as early as possible and convert those detections into usable situational awareness.
 - The practical challenge is not only object detection, but early detection of very small targets under real outdoor conditions: clouds, trees, rooftops, glare, dusk, haze, motion blur, and platform movement all degrade performance.
